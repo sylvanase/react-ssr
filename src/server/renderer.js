@@ -1,11 +1,18 @@
 import React from 'react'
 import { renderToString } from 'react-dom/server'
+import { StaticRouter } from 'react-router-dom'
+import routes from '../share/routes'
+import { renderRoutes } from 'react-router-config'
+
 // 1. 引入组件
 import Home from '../share/pages/Home'
 
-export default () => {
+export default (req) => {
 	// 2. 使用 renderToString 将组件转化为 HTML 字符串
-	const content = renderToString(<Home />)
+	const content = renderToString(
+		<StaticRouter location={req.path}>{renderRoutes(routes)}</StaticRouter>
+	)
+
 	return `<html>
   <head>
     <title>react ssr</title>
