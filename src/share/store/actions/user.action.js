@@ -4,6 +4,7 @@ export const FETCH_USER = 'fetch_user'
 
 export const fetchUser = () => async (dispatch) => {
 	let response = await axios.get('https://jsonplaceholder.typicode.com/users')
+	// 模拟 xss 攻击
 	// let response = {
 	//   data: [
 	//     {

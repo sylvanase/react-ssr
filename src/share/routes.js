@@ -2,7 +2,7 @@
  * @Author: sylvanas
  * @Date: 2021-01-11 22:22:27
  * @LastEditors: sylvanas
- * @LastEditTime: 2021-01-11 22:45:27
+ * @LastEditTime: 2021-01-16 20:24:57
  * @Description:
  */
 import Home from '../share/pages/Home'
@@ -16,6 +16,6 @@ export default [
 	},
 	{
 		path: '/list',
-		component: List,
+		...List,
 	},
 ]
